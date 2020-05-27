@@ -4,6 +4,8 @@ const CreatePost = ()=>{
     const [title, setTitle ] = useState("")
     const [body,setBody] = useState("")
     const [image,setImage] = useState("")
+    const [url,setUrl] = useState("")
+
 
     const poseDetails = ()=>{
         const data = new FormData()
@@ -16,7 +18,7 @@ const CreatePost = ()=>{
         })
         .then(res=>res.json())
         .then(data=>{
-            console.log(data)
+            setUrl(data.url)
         })
         .catch(err=>{
             console.log(err)
