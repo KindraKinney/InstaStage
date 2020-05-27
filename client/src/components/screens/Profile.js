@@ -20,9 +20,9 @@ const Profile  = ()=>{
        if(image){
         const data = new FormData()
         data.append("file",image)
-        data.append("upload_preset","insta-clone")
-        data.append("cloud_name","cnq")
-        fetch("https://api.cloudinary.com/v1_1/cnq/image/upload",{
+        data.append("upload_preset","instastage")
+        data.append("cloud_name","kinney")
+        fetch("https://api.cloudinary.com/v1_1/kinney",{
             method:"post",
             body:data
         })
@@ -80,8 +80,7 @@ const Profile  = ()=>{
                    <h5>{state?state.email:"loading"}</h5>
                    <div style={{display:"flex",justifyContent:"space-between",width:"108%"}}>
                        <h6>{mypics.length} posts</h6>
-                       <h6>{state?state.followers.length:"0"} followers</h6>
-                       <h6>{state?state.following.length:"0"} following</h6>
+                       
                    </div>
 
                </div>
