@@ -16,7 +16,7 @@ mongoose.connect(process.env.MONGODB_URI ||"mongodb://localhost/instastage", {
 require('./models/user');
 require("./models/post");
 app.use(require("./routes/auth"))
-app.use(require("./routes/post"))
+app.use(require("./routes/auth"))
 
 app.listen(PORT,()=>{
     console.log("Server is running on", PORT)
