@@ -34,6 +34,7 @@ router.post('/createpost',requireLogin,(req,res)=>{
     })
 })
 
+<<<<<<< HEAD
 router.get("/mypost", requireLogin, (req, res) => {
     Post.find({postedBy: req.user._id})
     .populate("postedBy", "_id name")
@@ -41,6 +42,15 @@ router.get("/mypost", requireLogin, (req, res) => {
         res.json({mypost})
     })
     .catch(err => {
+=======
+router.get('/mypost',requireLogin,(req,res)=>{
+    Post.find({postedBy:req.user._id})
+    .populate("PostedBy","_id name")
+    .then(mypost=>{
+        res.json({mypost})
+    })
+    .catch(err=>{
+>>>>>>> 15fd8477c5238a21165f6127773c66e051ae33b3
         console.log(err)
     })
 })
